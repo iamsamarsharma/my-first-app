@@ -13,7 +13,11 @@
 <hr>
 
 <!--<p>the UpdatedUserName is : {{userNameUpdateText}}</p>-->
-<p  *ngIf="userNameUpdated">{{userNameUpdateText}}</p>
+<p  *ngIf="userNameUpdated; else noUserName">{{userNameUpdateText}}</p>
+
+<ng-template #noUserName>
+  <p>Please Update the userName</p>
+</ng-template>
 
 <hr>
 
