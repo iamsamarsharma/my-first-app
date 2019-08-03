@@ -10,3 +10,7 @@
         [disabled] = "!userNameUpdate()"
 (click)="onUpdateUserName()">Update the name
 </button>
+<hr>
+<button class="btn-xs"
+        [disabled]="!userNameUpdate()"
+        (click)="userName=''">Reset Name</button>
