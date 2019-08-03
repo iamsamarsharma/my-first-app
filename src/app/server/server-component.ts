@@ -8,19 +8,22 @@ export  class ServerComponent {
   server = 'my server';
   serverId = 666;
   serverStatus = 'offline';
-  userName: any = 'Please update UserName !!!!';
+  userName: any = 'UserName';
+  userNameUpdateText = '';
+  userNameUpdated = false;
 
   getServerStatus() {
     return this.serverStatus;
   }
 
   userNameUpdate() {
-    if (this.userName === 'Please update UserName !!!!' || this.userName === '') {
+    if (this.userName === 'UserName' || this.userName === '') {
       return false;
     } else { return true; }
   }
 
   onUpdateUserName() {
-    this.userName = 'the updated user name is :' + this.userName;
+    this.userNameUpdated = true;
+    this.userNameUpdateText =  this.userName;
   }
 }

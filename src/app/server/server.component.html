@@ -4,13 +4,20 @@
 <input type="text"
        class="form-control"
        [(ngModel)]="userName">
-<p>the UpdatedUserName is : {{userName}}</p>
 
+<hr>
 <button class="btn btn-danger"
-        [disabled] = "!userNameUpdate()"
-(click)="onUpdateUserName()">Update the name
+        [disabled]="!userNameUpdate()"
+        (click)="onUpdateUserName()">Update the name
 </button>
 <hr>
-<button class="btn-xs"
+
+<!--<p>the UpdatedUserName is : {{userNameUpdateText}}</p>-->
+<p  *ngIf="userNameUpdated">{{userNameUpdateText}}</p>
+
+<hr>
+
+<button *ngIf="userNameUpdated" class="btn-xs"
         [disabled]="!userNameUpdate()"
-        (click)="userName=''">Reset Name</button>
+        (click)="userName=''">Reset Name
+</button>
