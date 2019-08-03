@@ -1,1 +1,12 @@
 <p>{{server}} with id {{serverId}} is {{serverStatus}}</p>
+
+<label>User Name</label>
+<input type="text"
+       class="form-control"
+       [(ngModel)]="userName">
+<p>the UpdatedUserName is : {{userName}}</p>
+
+<button class="btn btn-danger"
+        [disabled] = "!userNameUpdate()"
+(click)="onUpdateUserName()">Update the name
+</button>
