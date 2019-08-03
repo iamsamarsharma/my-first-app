@@ -12,6 +12,10 @@ export  class ServerComponent {
   userNameUpdateText = '';
   userNameUpdated = false;
 
+  constructor() {
+    this.serverStatus =  Math.random() > 0.5 ? 'online' : 'offline' ;
+  }
+
   getServerStatus() {
     return this.serverStatus;
   }
@@ -25,5 +29,9 @@ export  class ServerComponent {
   onUpdateUserName() {
     this.userNameUpdated = true;
     this.userNameUpdateText =  this.userName;
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 }
